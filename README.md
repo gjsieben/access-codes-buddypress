@@ -7,13 +7,13 @@
 * License: GPLv2
 
 # Description
-You want people can register on your blog, but you want to filter them? Create codes, share them, track the codes, track the users. Just easy as it seems! Don't let everyone register ;)
+You want people can register on your blog, but you want to filter them? Create codes, share them, track the codes, track the users. Just easy as it seems! Don't let everyone register (otherwise you wouldn't use this plugin). ;)
 
 # Installation
 1. Extract the plugin folder from the downloaded ZIP file.
 2. Upload Access Codes folder to your /wp-content/plugins/ directory.
 3. Activate the plugin from the "Plugins" page in your Dashboard.
-4. Go to settings!
+4. Go to settings, and create a code. Right now, only about (10?) codes can be active at a time, but a code tweak can adjust this.
 
 # A Word on Development
 This plugin was originally developed by Mediatricks, but wasn't compatible with BuddyPress.
