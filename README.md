@@ -14,3 +14,8 @@ You want people can register on your blog, but you want to filter them? Create c
 2. Upload Access Codes folder to your /wp-content/plugins/ directory.
 3. Activate the plugin from the "Plugins" page in your Dashboard.
 4. Go to settings!
+
+# A Word on Development
+This plugin was originally developed by Mediatricks, but wasn't compatible with BuddyPress.
+BuddyPress support was added later by "juliobox", but the plugin still had some problems that prevented it from working well.
+This is a repaired, improved version of the "juliobox" version, which was last updated over 5 years ago on WordPress.org.
