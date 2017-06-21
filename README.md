@@ -1,5 +1,5 @@
 # Access Codes
-* Contributors: Gabriel Sieben, juliobox, Mediatricks
+* Contributors: GJSieben, juliobox, Mediatricks
 * Tags: code, invitation, guest, register, buddypress
 * Requires at least: 3.0
 * Tested up to: 4.8
