@@ -5,7 +5,7 @@ function bpeic_field_link()
 {
 	global $bpeic_fields;
 ?>
-	<label><input type="checkbox" name="bpeic_fields[link]" <?php checked( $bpeic_fields['link'], 'on' ); ?>/> <em><?php _e( 'Do you want an extra text/link on registration form?', 'bpeic' ); ?></em></label>
+	<label><input type="checkbox" name="bpeic_fields[link]" <?php checked( $bpeic_fields['link'], 'on' ); ?>/> <em><?php _e( 'Do you want extra text/link on the registration form?', 'bpeic' ); ?></em></label>
 <?php
 }	
 
@@ -20,7 +20,7 @@ function bpeic_field_text_link()
 function bpeic_field_count()
 {
 ?>
-	<input type="number" size="3" min="1" name="bpeic_field_count" value="1" /> <em><?php _e( 'How many time this code can be used?', 'bpeic' ); ?></em>
+	<input type="number" size="3" min="1" name="bpeic_field_count" value="1" /> <em><?php _e( 'How many times can this code be used?', 'bpeic' ); ?></em>
 <?php
 }
 

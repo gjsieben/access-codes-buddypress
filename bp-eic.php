@@ -3,7 +3,7 @@
 Plugin Name: Access Codes
 Description: BP Visitors have to enter an invitation code to register on your site. The easy way!
 Version: 1.0
-Author: GJSieben, Mediatricks
+Author: GJSieben, Mediatricks, juliobox
 License: GPLv2
 */
 
