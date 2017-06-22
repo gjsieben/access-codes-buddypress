@@ -4,7 +4,7 @@ function bpeic_register_form_add_field()
 	global $bpeic_fields, $allowedposttags;
 ?>
 	<p>
-		<label for="invitation_code"><?php _e( 'Invite Code (Required)', 'bpeic' ); ?></label>
+		<label for="invitation_code"><?php _e( 'Access Code (Required)', 'bpeic' ); ?></label>
 <?php do_action( 'bp_invitation_code_errors' ); ?>
 		<input name="invitation_code" tabindex="30" type="text" value="<?php
     echo empty($_POST['invitation_code'])?'':$_POST['invitation_code']; ?>" class="input" id="invitation_code" style="text-transform: uppercase" />
@@ -22,10 +22,10 @@ global $bp, $bpeic_options;
  
 	$invitation_code = isset( $_POST['invitation_code'] ) ? strtoupper( $_POST['invitation_code'] ) : '';
 	if( !array_key_exists( $invitation_code, $bpeic_options['codes'] ) ) {
-		  $bp->signup->errors['invitation_code'] = 'The code you entered is not valid.';
+		  $bp->signup->errors['invitation_code'] = 'The Access Code you entered is not valid.';
 	}
 elseif ( isset( $bpeic_options['codes'][$invitation_code] ) && $bpeic_options['codes'][$invitation_code]['leftcount']==0 ){
-		  $bp->signup->errors['invitation_code'] = 'This Invite Code has already been used.';
+		  $bp->signup->errors['invitation_code'] = 'This Access Code has already been used.';
 
 	}
 }
@@ -60,7 +60,7 @@ add_action( 'login_footer', 'bpeic_login_footer' );
 function registration_add_code_invite(){ ?>
 
     <div class="register-section" id="profile-details-section">
-   <h4><?php _e( 'Invite Code', 'buddypress' ); ?></h4>
+   <h4><?php _e( 'Access Code', 'buddypress' ); ?></h4>
     <?php 
     do_action('register_form'); ?>
 </div>

@@ -27,11 +27,11 @@ function bpeic_admin_menu()
 		}
 	}
 	// All my pages
-	add_menu_page( __( 'Invitation Codes List', 'bpeic' ), __( 'Invitation Codes', 'bpeic' ), 'manage_options', 'bpeic_list_codes', 'bpeic_list_codes', plugins_url( '/images/icon.png', ___FILE___ ), $pos );
+	add_menu_page( __( 'Access Codes List', 'bpeic' ), __( 'Access Codes', 'bpeic' ), 'manage_options', 'bpeic_list_codes', 'bpeic_list_codes', plugins_url( '/images/icon.png', ___FILE___ ), $pos );
 	add_submenu_page( 'bpeic_list_codes', __( 'Add new code', 'bpeic' ), __( 'Add new code', 'bpeic' ), 'manage_options', 'bpeic_add_code', 'bpeic_add_code' );
 	add_submenu_page( 'bpeic_list_codes', __( 'Generate codes', 'bpeic' ), __( 'Generate codes', 'bpeic' ), 'manage_options', 'bpeic_rand_code', 'bpeic_rand_code' );
-	add_submenu_page( 'bpeic_list_codes', __( 'Codes list (raw)', 'bpeic' ), __( 'Codes list (raw)', 'bpeic' ), 'manage_options', 'bpeic_raw_codes', 'bpeic_raw_codes' );
-	add_submenu_page( 'bpeic_list_codes', __( 'Some options', 'bpeic' ), __( 'Some Options', 'bpeic' ), 'manage_options', 'bpeic_settings', 'bpeic_settings_page' );
+	add_submenu_page( 'bpeic_list_codes', __( 'Codes list', 'bpeic' ), __( 'Codes list', 'bpeic' ), 'manage_options', 'bpeic_raw_codes', 'bpeic_raw_codes' );
+	add_submenu_page( 'bpeic_list_codes', __( 'Settings', 'bpeic' ), __( 'Settings', 'bpeic' ), 'manage_options', 'bpeic_settings', 'bpeic_settings_page' );
 	// and registered settings
 	register_setting( 'bpeic_add_code', 'bpeic_field_code', 'bpeic_fields_cb' );
 	register_setting( 'bpeic_rand_code', 'bpeic_field_prefix', 'bpeic_fields_cb2' );
@@ -45,7 +45,7 @@ function bpeic_raw_codes()
 ?>
 	<div class="wrap">
 		<?php screen_icon( 'edit' ); ?>
-		<h2><?php _e( 'Invitation Codes List', 'bpeic' ); ?>
+		<h2><?php _e( 'Access Codes List', 'bpeic' ); ?>
 		<a class="add-new-h2" href="<?php echo admin_url( 'admin.php?page=bpeic_list_codes' ); ?>"><?php _e( 'Codes list', 'bpeic' ) ;?></a>
 		<a class="add-new-h2" href="<?php echo admin_url( 'admin.php?page=bpeic_add_code' ); ?>"><?php _e( 'Add new codes', 'bpeic' ) ;?></a>
 		<a class="add-new-h2" href="<?php echo admin_url( 'admin.php?page=bpeic_rand_code' ); ?>"><?php _e( 'Generate codes', 'bpeic' ) ;?></a>
@@ -72,7 +72,7 @@ function bpeic_settings_page()
 ?>
 	<div class="wrap">
 		<?php screen_icon( 'edit' ); ?>
-		<h2><?php _e( 'Invitation Codes Settings', 'bpeic' ); ?>
+		<h2><?php _e( 'Access Codes Settings', 'bpeic' ); ?>
 		<a class="add-new-h2" href="<?php echo admin_url( 'admin.php?page=bpeic_list_codes' ); ?>"><?php _e( 'Codes list', 'bpeic' ) ;?></a>
 		<a class="add-new-h2" href="<?php echo admin_url( 'admin.php?page=bpeic_add_code' ); ?>"><?php _e( 'Add new codes', 'bpeic' ) ;?></a>
 		<a class="add-new-h2" href="<?php echo admin_url( 'admin.php?page=bpeic_rand_code' ); ?>"><?php _e( 'Generate codes', 'bpeic' ) ;?></a>
@@ -96,7 +96,7 @@ function bpeic_add_code()
 ?>
 	<div class="wrap">
 		<?php screen_icon( 'edit' ); ?>
-		<h2><?php _e( 'Invitation Codes, add one!', 'bpeic' ); ?>
+		<h2><?php _e( 'Add an Access Code', 'bpeic' ); ?>
 		<a class="add-new-h2" href="<?php echo admin_url( 'admin.php?page=bpeic_list_codes' ); ?>"><?php _e( 'Codes list', 'bpeic' ) ;?></a>
 		<a class="add-new-h2" href="<?php echo admin_url( 'admin.php?page=bpeic_rand_code' ); ?>"><?php _e( 'Generate codes', 'bpeic' ) ;?></a>
 		</h2>
@@ -121,7 +121,7 @@ function bpeic_rand_code()
 ?>
 	<div class="wrap">
 		<?php screen_icon( 'edit' ); ?>
-		<h2><?php _e( 'Invitation Codes, generate some!', 'bpeic' ); ?>
+		<h2><?php _e( 'Generate Access Codes', 'bpeic' ); ?>
 		<a class="add-new-h2" href="<?php echo admin_url( 'admin.php?page=bpeic_list_codes' ); ?>"><?php _e( 'Codes list', 'bpeic' ) ;?></a>
 		<a class="add-new-h2" href="<?php echo admin_url( 'admin.php?page=bpeic_add_code' ); ?>"><?php _e( 'Add new code', 'bpeic' ) ;?></a>
 		</h2>
@@ -198,7 +198,7 @@ function create_invitation_code( $code, $count=1 )
 function bpeic_activation()
 {
 	add_option( 'bpeic_options', array( 'codes' => array( 'INVITATION' => array( 'maxcount'=>999999, 'leftcount'=>999999, 'users'=>'' ) ) ) );
-	add_option( 'bpeic_fields', array( 'link' => 'on', 'text_link'=> sprintf( __( 'Need an invitation code? <a href="mailto:%s">Contact us!</a>', 'bpeic' ), get_option( 'admin_email' ) ) ) );
+	add_option( 'bpeic_fields', array( 'link' => 'on', 'text_link'=> sprintf( __( 'Need an access code? <a href="mailto:%s">Contact us!</a>', 'bpeic' ), get_option( 'admin_email' ) ) ) );
 }
 register_activation_hook( ___FILE___, 'bpeic_activation' );
 
@@ -246,7 +246,7 @@ function bpeic_list_codes()
 ?>
 	<div class="wrap">
 		<?php screen_icon( 'edit' ); ?>
-		<h2><?php _e( 'Invitation Codes List', 'bpeic' ); ?>
+		<h2><?php _e( 'Access Codes List', 'bpeic' ); ?>
 		<a class="add-new-h2" href="<?php echo admin_url( 'admin.php?page=bpeic_add_code' ); ?>"><?php _e( 'Add new code', 'bpeic' ) ;?></a>
 		<a class="add-new-h2" href="<?php echo admin_url( 'admin.php?page=bpeic_rand_code' ); ?>"><?php _e( 'Generate codes', 'bpeic' ) ;?></a>
 		<?php if( !empty( $_GET['s'] ) ) 
@@ -341,7 +341,7 @@ function bpeic_list_codes()
 
 function bpeic_admin_notice_noone()
 {
-	echo '<div class="error" id="message"><p>' . __( 'Nobody can register because you did not set any invitation codes, <a href="admin.php?page=bpeic_add_code">do it now</a>!', 'bpeic' ) . '</p></div>';
+	echo '<div class="error" id="message"><p>' . __( 'Nobody can register because you did not set any access codes, click <a href="admin.php?page=bpeic_add_code">here</a> to make some!', 'bpeic' ) . '</p></div>';
 }
 
 function bpeic_check_codes()
